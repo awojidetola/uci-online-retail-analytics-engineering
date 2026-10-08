@@ -31,6 +31,7 @@ Mart (Reporting)
 Analysis
 ```
 
+
 ### Staging
 
 The staging layer prepares the raw UCI dataset for modelling through cleaning and standardising source fields, handling missing values, classifying cancellations, standardising data types adn removing duplicate transactions. 
@@ -116,13 +117,3 @@ Implementing SCD Type 2 would introduce additional historical complexity without
 
 ---
 
-## Project Structure
-
-analyses/
-models/
-├── staging/
-├── intermediate/
-└── marts/
-    ├── core/
-    └── reporting/
-dbt_project.yml
