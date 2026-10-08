@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: online_retail
+    database: uci-online-retail-501604
+    schema: OnlineRetail2Years
+    tables:
+      - name: Data-2009-2011
+      - name: product_data

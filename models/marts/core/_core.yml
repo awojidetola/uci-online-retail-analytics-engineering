@@ -1,0 +1,86 @@
+version: 2
+
+models:
+
+  - name: dim_customer
+    description: "Customer dimension containing one row per customer. Country represents the customer's country from their most recent transaction."
+    columns:
+      - name: customer_key
+        description: "Surrogate key for the customer."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Business identifier for the customer."
+        tests:
+          - unique
+          - not_null
+
+      - name: country
+        description: "Customer country from their most recent transaction."
+
+  - name: dim_date
+    description: "Date dimension containing one row per transaction date."
+    columns:
+      - name: date_key
+        description: "Surrogate key for the date."
+        tests:
+          - unique
+          - not_null
+
+      - name: invoice_date
+        description: "Date and time associated with the transaction."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_product
+    description: "Product dimension containing one row per product category and subcategory combination."
+    columns:
+      - name: product_key
+        description: "Surrogate key for the product category."
+        tests:
+          - unique
+          - not_null
+
+      - name: top_level_category
+        description: "Top-level product category."
+        tests:
+          - not_null
+
+      - name: subcategory
+        description: "Product subcategory."
+        tests:
+          - not_null
+
+  - name: fct_sales
+    description: "Sales fact table at transaction-line grain."
+    columns:
+      - name: customer_key
+        description: "Foreign key to the customer dimension."
+
+      - name: date_key
+        description: "Foreign key to the date dimension."
+        tests:
+          - not_null
+
+      - name: product_key
+        description: "Foreign key to the product dimension."
+        tests:
+          - not_null
+
+      - name: invoice
+        description: "Invoice number identifying the transaction."
+
+      - name: quantity
+        description: "Quantity recorded for the transaction line."
+
+      - name: unit_price
+        description: "Unit price recorded for the transaction line."
+
+      - name: revenue
+        description: "Revenue calculated as unit price multiplied by quantity."
+
+      - name: is_cancelled
+        description: "Indicates whether the invoice is cancelled."

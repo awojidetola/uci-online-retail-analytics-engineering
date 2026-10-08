@@ -1,0 +1,12 @@
+# dbt generated files
+target/
+logs/
+
+# Local dbt configuration
+profiles.yml
+
+# Python / OS
+__pycache__/
+*.pyc
+.DS_Store
+dbt_internal_packages/
