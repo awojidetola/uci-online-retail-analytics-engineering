@@ -32,45 +32,16 @@ Analysis
 ```
 
 
-### Staging
-
-The staging layer prepares the raw UCI dataset for modelling through cleaning and standardising source fields, handling missing values, classifying cancellations, standardising data types adn removing duplicate transactions. 
-
-### Intermediate
-
-The intermediate layer applies business logic to transform the data, by introducing product taxonomy, date features, revenue calculations and other classifications. 
-
-### Mart
-
-This consists of the core layer and the reporting layer. The core layer has the fact and dimension tables. The reporting layer has analysis-ready marts that was used for analysis. 
-
----
-
 ## Key Business Insights
 
-The final analysis identified:
+1.	The dataset contains 20,134 completed orders, generating approximately £10.71 million in revenue across 5.66 million units. The average order value is £532.12, while the average basket contains approximately 281 units.
 
-| Metric | Result |
-|---|---:|
-| Completed orders | **20,134** |
-| Revenue | **£10.71m** |
-| Units sold | **5.66m** |
-| Average order value | **£532.12** |
-| Overall cancellation rate | **1.72%** |
+2.	Revenue is heavily concentrated geographically, with the United Kingdom accounting for approximately £7.34 million of completed-sales revenue. November 2011 was the strongest month, generating approximately £1.51 million, while Thursday generated the highest weekday revenue.
 
-### Customer Concentration
+3.	Customer value is highly concentrated. The top 20% of customers account for 74.68% of revenue, with a 98.5% repeat-customer rate, highlighting the importance of customer retention. 
 
-Revenue is highly concentrated among a relatively small group of customers.
+4.	The overall cancellation rate is relatively low at 1.72%, although it differs by product category. 
 
-The **top 20% of active customers generated 74.68% of completed revenue**, while the remaining 80% generated 25.32%.
-
-This concentration highlights the importance of understanding customer value and retention when analysing the retailer's revenue base.
-
-### Sales Trends
-
-**November 2011** was the strongest month by revenue in the analysed period.
-
-At a weekly-cycle level, **Thursday generated the highest revenue of any weekday**, indicating that revenue was not distributed evenly across the trading week.
 
 ---
 
@@ -98,9 +69,7 @@ Eight customers appear under multiple countries in the source data.
 
 The project does not attempt to reconstruct historical customer-location changes. Instead, the **most recent country associated with each customer is retained**.
 
-This decision was made because the primary objective is current customer and sales analysis rather than historical reconstruction of customer attributes.
-
-Implementing SCD Type 2 would introduce additional historical complexity without materially improving the analytical questions addressed by this project.
+This decision was made because the primary objective is current customer and sales analysis rather than historical differences in customer attributes.
 
 ---
 
@@ -113,7 +82,6 @@ Implementing SCD Type 2 would introduce additional historical complexity without
 | **dbt** | Data transformation, modelling and testing |
 | **SQL** | Data transformation and analytical logic |
 | **Git / GitHub** | Version control and project management |
-| **UCI Online Retail Dataset** | Source dataset |
-
+| **UCI Online Retail Dataset** | [Source dataset](https://archive.ics.uci.edu/dataset/352/online+retail) | 
 ---
 
