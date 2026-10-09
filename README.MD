@@ -50,7 +50,7 @@ Analysis
 
 The pipeline explicitly handles several data-quality and modelling considerations within the source dataset.
 
-- Missing product descriptions are retained and handled during transformation rather than silently removing the associated transactions. Where a product cannot be confidently classified, it is assigned to an **Unclassified/Miscellaneous** category.
+- Missing product descriptions are retained and handled during transformation rather than removing the associated transactions. Products are categorised based on product description. Where a product cannot be classified, it is assigned to an **Unclassified/Miscellaneous** category.
 
 - Invalid or non-positive prices are identified during the staging and transformation process so that they do not distort revenue calculations.
 
