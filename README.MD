@@ -1,8 +1,8 @@
-# UCI Online Retail — Analytics Engineering Project
+# UK Online Retail Store — Analytics Engineering Project
 
 ## Overview
 
-This project analyses the **UCI Online Retail dataset**, which contains transactional data from a UK-based online retailer covering the period **2009–2011**.
+This project analyses the UCI Online Retail dataset, which contains transactional data from a UK-based online retailer covering the period **2009–2011**.
 
 The project began as a SQL-based analysis of sales, customers, products and geography. It was subsequently **refactored into a structured analytics engineering pipeline using dbt and BigQuery**, separating data cleaning, transformation, dimensional modelling and reporting logic into reusable, testable layers.
 
