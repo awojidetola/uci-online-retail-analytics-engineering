@@ -30,6 +30,7 @@ Mart (Reporting)
  ▼
 Analysis
 ```
+![Data Lineage](https://github.com/awojidetola/uci-online-retail-analytics-engineering/blob/main/assests/data_lineage.PNG)
 
 
 ## Key Business Insights
